@@ -341,7 +341,7 @@ def ud(update, context):
 @typing_action
 def src(update, context):
     update.effective_message.reply_text(
-        "Hey there! You can find what makes me click [Here](t.me/meikoSupport) .",
+        "Hey there! You can find what makes me click [Here](t.me/ChiyoSupport) .",
         parse_mode=ParseMode.MARKDOWN,
         disable_web_page_preview=True,
     )
