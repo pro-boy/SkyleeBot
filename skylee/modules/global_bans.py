@@ -78,7 +78,7 @@ def gban(update, context):
         return
 
     if user_id == OWNER_ID:
-        message.reply_text("Nice try -_- but I'm never gonna gban him.")
+        message.reply_text("MotherFucker! You Can't Gban My Owner 🥱🥱")
         return
 
     if int(user_id) in SUDO_USERS:
@@ -394,7 +394,7 @@ def gbanstat(update, context):
 
 
 def __stats__():
-    return "✗ {} gbanned users.".format(sql.num_gbanned_users())
+    return "◉ {} gbanned users.".format(sql.num_gbanned_users())
 
 
 def __user_info__(user_id):
