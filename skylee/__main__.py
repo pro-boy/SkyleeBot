@@ -2,7 +2,7 @@ import importlib, traceback, html, json
 import re
 from typing import Optional, List
 
-from telegram import Message, Chat, User
+from telegram import Message, Chat, User, Bot
 from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import CommandHandler, Filters, MessageHandler, CallbackQueryHandler
 from telegram.ext.dispatcher import run_async, DispatcherHandlerStop
@@ -152,7 +152,7 @@ def start(update, context):
         else:
             first_name = update.effective_user.first_name
             update.effective_message.reply_photo(CHIYO_IMG,
-                PM_START_TEXT.format(escape_markdown(first_name), OWNER_ID),
+                PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
                 parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Add Chiyo To Your Group",
                                                                        url="t.me/{}?startgroup=true".format(bot.username))]]))
 
