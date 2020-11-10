@@ -37,7 +37,7 @@ from typing import List
 from telegram import Bot, Update, ParseMode
 from telegram.ext import run_async
 
-from skylee import dispatcher, StartTime
+from skylee import dispatcher
 from skylee.modules.disable import DisableAbleCommandHandler
 
 
