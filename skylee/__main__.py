@@ -51,6 +51,8 @@ List of *Main* Commands Available *Chiyo* [◉‿◉](https://telegra.ph/file/48
  ◉ in PM: will send you your settings for all supported modules.
  ◉ in a group: will redirect you to pm, with all that chat's settings.
 
+CHIYO_IMG = "https://telegra.ph/file/8af3961975d1cafd53839.jpg"
+
 IMPORTED = {}
 MIGRATEABLE = []
 HELPABLE = {}
@@ -147,12 +149,14 @@ def start(update, context):
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
 
         else:
-            update.effective_message.reply_photo(
-                "https://telegra.ph/file/8af3961975d1cafd53839.jpg",
+            first_name = update.effective_user.first_name
+            update.effective_message.reply_photo(CHIYO_IMG,
                 PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
                 parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Add Chiyo To Your Group",
                                                                        url="t.me/{}?startgroup=true".format(bot.username))]]))
-            )
+
+
+
     else:
         update.effective_message.reply_text(
             "Hey!!! Am Alive (◍•ᴗ•◍)"
