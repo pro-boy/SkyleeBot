@@ -152,7 +152,7 @@ else:
 # Telethon
 api_id = TELETHON_ID
 api_hash = TELETHON_HASH
-client = TelegramClient("Chiyo", api_id, api_hash)
+client = TelegramClient("skylee", api_id, api_hash)
 
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 
