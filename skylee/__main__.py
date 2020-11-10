@@ -32,7 +32,7 @@ from skylee.modules.helper_funcs.alternate import typing_action
 
 
 PM_START_TEXT = """
-Hi there! my name is *Chiyo*.
+Hi {}, my name is *Chiyo*.
 I am a Powerful Telegram Group Management Bot.
 Add me to your group for a proper and spam free management.
 ================================
@@ -152,7 +152,7 @@ def start(update, context):
         else:
             first_name = update.effective_user.first_name
             update.effective_message.reply_photo(CHIYO_IMG,
-                PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
+                PM_START_TEXT.format(escape_markdown(first_name), OWNER_ID),
                 parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Add Chiyo To Your Group",
                                                                        url="t.me/{}?startgroup=true".format(bot.username))]]))
 
