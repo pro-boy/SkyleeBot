@@ -41,10 +41,8 @@ Add me to your group for a proper and spam free management.
 ================================\n
 """
 
-buttons = [
-        InlineKeyboardButton(
-            text="Add Chiyo To Your Group", url="t.me/ChiyoRobot?startgroup=true"
-    ]
+buttons = [InlineKeyboardButton(
+            text="Add Chiyo To Your Group", url="t.me/ChiyoRobot?startgroup=true"]
 
 HELP_STRINGS = f"""
 Hello There! My Name is *Chiyo*.\nA Powerful Group Management Bot.
