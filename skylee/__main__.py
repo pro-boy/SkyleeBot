@@ -152,9 +152,9 @@ def start(update, context):
         else:
             first_name = update.effective_user.first_name
             update.effective_message.reply_photo(CHIYO_IMG,
-                PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
+                PM_START_TEXT,
                 parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Add Chiyo To Your Group",
-                                                                       url="t.me/{}?startgroup=true".format(bot.username))]]))
+                                                                       url="t.me/ChiyoRobot?startgroup=true")]]))
 
 
 
