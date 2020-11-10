@@ -32,44 +32,31 @@ from skylee.modules.helper_funcs.alternate import typing_action
 
 
 PM_START_TEXT = f"""
-Hey There ! My name is 𝙈𝙚𝙞𝙠𝙤 
-I'm here to make your group management fun and easy!
-I have lots of handy features, such as flood control, a warning system, a note keeping system, and even replies on predetermined filters.
-Please Click Help Button For Assistance And Help Regarding Special Modules
-You can find the list of available commands with Help Module.
-Any issues or need help related to me?
-==========================
-✗ [Support Channel](t.me/Meikosupport)
-✗ [Support Group](t.me/meikoSupportChat)
-==========================
-Wanna Add me to your Group? Just click the button below!
+Hi {}, my name is *Chiyo*.
+I am a Powerful Telegram Group Management Bot.
+Add me to your group for a proper and spam free management.
+================================
+>> For Available Commands Hit /help.
+>> For Chiyo Updates Join [Here](t.me/ChiyoUpdates).
+================================\n
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="Add Me To Group ➕", url="t.me/meikobot?startgroup=true"
-        ),
-        InlineKeyboardButton(text="Updates & Info 📃", url="https://t.me/meikosupport"),
+            text="Add Chiyo To Your Group", url="t.me/ChiyoRobot?startgroup=true"
     ]
 ]
 
-buttons += [[InlineKeyboardButton(text="Help & Commands ❔", callback_data="help_back")]]
-
-
 HELP_STRINGS = f"""
-Hello there! My name is *{dispatcher.bot.first_name}*.
-I'm a modular group management bot with a few fun extras! Have a look at the following for an idea of some of \
-the things I can help you with.
-
-*Main* commands available:
- ✗ `/start` : Starts me, can be used to check i'm alive or no...
- ✗ `/help` : PM's you this message.
- ✗ `/help <module name>` : PM's you info about that module.
- ✗ `/settings` : in PM: will send you your settings for all supported modules.
-   ~ in a group: will redirect you to pm, with all that chat's settings.
- \nClick on the buttons below to get documentation about specific modules!"""
-
+Hello There! My Name is *Chiyo*.\nA Powerful Group Management Bot.
+List of *Main* Commands Available *Chiyo* [◉‿◉](https://telegra.ph/file/48f53eeecd306f7f7b748.jpg)
+ ◉ /start: start the bot
+ ◉ /help: PM's you this message.
+ ◉ /help <module name>: PM's you info about that module.
+ ◉ /settings:
+ ◉ in PM: will send you your settings for all supported modules.
+ ◉ in a group: will redirect you to pm, with all that chat's settings.
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -168,7 +155,7 @@ def start(update, context):
 
         else:
             update.effective_message.reply_photo(
-                "https://telegra.ph/file/0a6a55b868d5e7d874295.jpg",
+                "https://telegra.ph/file/8af3961975d1cafd53839.jpg",
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
@@ -177,7 +164,7 @@ def start(update, context):
             )
     else:
         update.effective_message.reply_text(
-            "Heya :) PM me if you have any questions on how to use me!"
+            "Hey!!! Am Alive (◍•ᴗ•◍)"
         )
 
 
