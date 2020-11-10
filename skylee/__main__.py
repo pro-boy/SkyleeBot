@@ -41,8 +41,6 @@ Add me to your group for a proper and spam free management.
 ================================\n
 """
 
-buttons = [InlineKeyboardButton(text="Add Chiyo To Your Group", url="t.me/ChiyoRobot?startgroup=true"]
-
 HELP_STRINGS = f"""
 Hello There! My Name is *Chiyo*.\nA Powerful Group Management Bot.
 List of *Main* Commands Available *Chiyo* [◉‿◉](https://telegra.ph/file/48f53eeecd306f7f7b748.jpg)
@@ -151,11 +149,9 @@ def start(update, context):
         else:
             update.effective_message.reply_photo(
                 "https://telegra.ph/file/8af3961975d1cafd53839.jpg",
-                PM_START_TEXT,
-                reply_markup=InlineKeyboardMarkup(buttons),
-                parse_mode=ParseMode.MARKDOWN,
-                timeout=60,
-                disable_web_page_preview=True,
+                PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
+                parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Add Chiyo To Your Group",
+                                                                       url="t.me/{}?startgroup=true".format(bot.username))]]))
             )
     else:
         update.effective_message.reply_text(
