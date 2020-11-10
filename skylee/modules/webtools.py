@@ -14,6 +14,24 @@ from skylee import dispatcher, OWNER_ID
 from skylee.modules.helper_funcs.filters import CustomFilters
 from skylee.modules.helper_funcs.alternate import typing_action
 
+
+@run_async
+@typing_action
+def ping(update, context):
+    tg_api = ping3("htt://api.telegram.org", count=4)
+    google = ping3("http://google.com", count=4)
+    text = "*Pong!*\n"
+    text += "Average Speed: `{}` ms\n".format(
+        tg_api.rtt_avg_ms
+    )
+    if google.rtt_avg:
+        gspeed = google.rtt_avg
+    else:
+        gspeed = google.rtt_avg
+    text += "Average speed to Google - `{}` ms".format(gspeed)
+    update.effective_message.reply_text(text, parse_mode=ParseMode.MARKDOWN)
+
+
 # Kanged from PaperPlane Extended userbot
 def speed_convert(size):
     """
@@ -26,6 +44,42 @@ def speed_convert(size):
         size /= power
         zero += 1
     return f"{round(size, 2)} {units[zero]}"
+
+
+@run_async
+@typing_action
+def get_bot_ip(update, context):
+    """ Sends the bot's IP address, so as to be able to ssh in if necessary.
+        OWNER ONLY.
+    """
+    res = requests.get("http://ipinfo.io/ip")
+    update.message.reply_text(res.text)
+
+
+@run_async
+@typing_action
+def speedtst(update, context):
+    message = update.effective_message
+    ed_msg = message.reply_text("Running high speed test . . .")
+    test = speedtest.Speedtest()
+    test.get_best_server()
+    test.download()
+    test.upload()
+    test.results.share()
+    result = test.results.dict()
+    context.bot.editMessageText(
+        "Download "
+        f"{speed_convert(result['download'])} \n"
+        "Upload "
+        f"{speed_convert(result['upload'])} \n"
+        "Ping "
+        f"{result['ping']} \n"
+        "ISP "
+        f"{result['client']['isp']}",
+        update.effective_chat.id,
+        ed_msg.message_id,
+    )
+
 
 @run_async
 @typing_action
