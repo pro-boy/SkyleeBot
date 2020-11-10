@@ -38,7 +38,7 @@ Add me to your group for a proper and spam free management.
 ================================
 >> For Available Commands Hit /help.
 >> For Chiyo Updates Join [Here](t.me/ChiyoUpdates).
-================================\n
+================================
 """
 
 HELP_STRINGS = f"""
