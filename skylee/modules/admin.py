@@ -104,12 +104,12 @@ def demote(update, context):
 
     user_id = extract_user(message, args)
     if not user_id:
-        message.reply_text("Hey , Mention A User 🤷 !")
+        message.reply_text("Hey , Atleast Mention A User 🥱!")
         return ""
 
     user_member = chat.get_member(user_id)
     if user_member.status == "creator":
-        message.reply_text("Oh ! Really ? Demoting A Creator 🙄")
+        message.reply_text("Wtf? Really ? Demoting A Creator 🙄")
         return ""
 
     if not user_member.status == "administrator":
@@ -119,7 +119,7 @@ def demote(update, context):
         return ""
 
     if user_id == context.bot.id:
-        message.reply_text("Oh ! I am Not Gonna Demote Myself")
+        message.reply_text("Damn! I Am Not Going To Demote Myself 🤨")
         return ""
 
     try:
@@ -134,7 +134,7 @@ def demote(update, context):
             can_restrict_members=False,
             can_pin_messages=False,
         )
-        message.reply_text("Successfully Demoted !")
+        message.reply_text("Successfully Demoted The User!")
         return (
             "<b>{}:</b>"
             "\n#DEMOTED"
@@ -281,8 +281,8 @@ def adminlist(update, context):
         status = admin.status
         name = f"{(mention_html(user.id, user.first_name))}"
         if status == "creator":
-            text += "\n 🦁 Creator:"
-            text += "\n ✗ {} \n\n 🐯 Admin:".format(name)
+            text += "\n 💫 Creator:"
+            text += "\n ◉ {} \n\n ☣️ Admin:".format(name)
     for admin in administrators:
         user = admin.user
         status = admin.status
@@ -509,22 +509,22 @@ Lazy to promote or demote someone for admins? Want to see basic information abou
 All stuff about chatroom such as admin lists, pinning or grabbing an invite link can be \
 done easily using the bot.
 
- ✗ /adminlist: list of admins in the chat
+ ◉ /adminlist: list of admins in the chat
 
 *Admin only:*
- ✗ /pin: Silently pins the message replied to - add `loud`, `notify` or `violent` to give notificaton to users.
- ✗ /unpin: Unpins the currently pinned message.
- ✗ /invitelink: Gets private chat's invitelink.
- ✗ /promote: Promotes the user replied to.
- ✗ /demote: Demotes the user replied to.
- ✗ /settitle: Sets a custom title for an admin which is promoted by bot.
- ✗ /setgpic: As a reply to file or photo to set group profile pic!
- ✗ /delgpic: Same as above but to remove group profile pic.
- ✗ /setgtitle <newtitle>: Sets new chat title in your group.
- ✗ /setsticker: As a reply to some sticker to set it as group sticker set!
- ✗ /setdescription: <description> Sets new chat description in group.
+ ◉ /pin: Silently pins the message replied to - add `loud`, `notify` or `violent` to give notificaton to users.
+ ◉ /unpin: Unpins the currently pinned message.
+ ◉ /invitelink: Gets private chat's invitelink.
+ ◉ /promote: Promotes the user replied to.
+ ◉ /demote: Demotes the user replied to.
+ ◉ /settitle: Sets a custom title for an admin which is promoted by bot.
+ ◉ /setgpic: As a reply to file or photo to set group profile pic!
+ ◉ /delgpic: Same as above but to remove group profile pic.
+ ◉ /setgtitle <newtitle>: Sets new chat title in your group.
+ ◉ /setsticker: As a reply to some sticker to set it as group sticker set!
+ ◉ /setdescription: <description> Sets new chat description in group.
 
-*Note*: To set group sticker set chat must needs to have min 100 members.
+*Note*: To set group stickers, chat must have minimum of 100 members.
 
 An example of promoting someone to admins:
 `/promote @username`; this promotes a user to admins.
