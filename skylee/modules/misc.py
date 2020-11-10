@@ -492,7 +492,7 @@ def staff_ids(update, context):
 @run_async
 def stats(update, context):
     update.effective_message.reply_text(
-        "Current stats Of Chiyo:\n" + "\n".join([mod.__stats__() for mod in STATS])
+        "Current Stats Of Chiyo:\n" + "\n".join([mod.__stats__() for mod in STATS])
     )
 
 
@@ -715,9 +715,13 @@ def gban(update, context):
         return
 
     message.reply_text(
-        f"<b>Global Banned</b> {mention_html(user_chat.id, user_chat.first_name)}"
-        f"\n<b>With ID</b>: <code>{user_chat.id}</code>"
-        f"\n<b>Reason</b>: <code>{reason or 'No reason given'}</code>",
+        "<b>Global Ban</b>" \
+                 "\n#GBAN" \
+                 "\n<b>Status:</b> <code>Enforcing</code>" \
+                 "\n<b>Sudo Admin:</b> {}" \
+                 "\n<b>User:</b> {}" \
+                 "\n<b>ID:</b> <code>{}</code>" \
+                 "\n<b>Reason</b>: <code>{reason or 'No reason given'}</code>",
         parse_mode=ParseMode.HTML,
     )
 
