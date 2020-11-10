@@ -12,7 +12,7 @@ logging.basicConfig(
 
 LOGGER = logging.getLogger(__name__)
 
-LOGGER.info("Starting Skylee...")
+LOGGER.info("Starting Chiyo...")
 
 # if version < 3.6, stop bot.
 if sys.version_info[0] < 3 or sys.version_info[1] < 6:
@@ -152,7 +152,7 @@ else:
 # Telethon
 api_id = TELETHON_ID
 api_hash = TELETHON_HASH
-client = TelegramClient("skylee", api_id, api_hash)
+client = TelegramClient("Chiyo", api_id, api_hash)
 
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 
