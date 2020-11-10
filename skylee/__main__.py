@@ -186,7 +186,6 @@ def error_handler(update, context):
     # Finally, send the message
     context.bot.send_message(chat_id=OWNER_ID, text=message, parse_mode=ParseMode.HTML)
 
-
 @run_async
 def help_button(update, context):
     query = update.callback_query
