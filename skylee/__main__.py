@@ -31,7 +31,7 @@ from skylee.modules.helper_funcs.misc import paginate_modules
 from skylee.modules.helper_funcs.alternate import typing_action
 
 
-PM_START_TEXT = f"""
+PM_START_TEXT = """
 Hi {}, my name is *Chiyo*.
 I am a Powerful Telegram Group Management Bot.
 Add me to your group for a proper and spam free management.
@@ -41,7 +41,7 @@ Add me to your group for a proper and spam free management.
 ================================
 """
 
-HELP_STRINGS = f"""
+HELP_STRINGS = """
 Hello There! My Name is *Chiyo*.\nA Powerful Group Management Bot.
 List of *Main* Commands Available *Chiyo* [◉‿◉](https://telegra.ph/file/48f53eeecd306f7f7b748.jpg)
  ◉ /start: start the bot
