@@ -50,6 +50,7 @@ List of *Main* Commands Available *Chiyo* [◉‿◉](https://telegra.ph/file/48
  ◉ /settings:
  ◉ in PM: will send you your settings for all supported modules.
  ◉ in a group: will redirect you to pm, with all that chat's settings.
+"""
 
 CHIYO_IMG = "https://telegra.ph/file/8af3961975d1cafd53839.jpg"
 
