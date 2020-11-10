@@ -244,7 +244,7 @@ Presenting reports; if someone in your group thinks someone needs reporting, the
 an easy way to call all admins.
 
 *Admin only:*
- ✗ /reports <on/off>: Change report setting, or view current status.
+ ◉ /reports <on/off>: Change report setting, or view current status.
    • If done in pm, toggles your status.
    • If in chat, toggles that chat's status.
 
