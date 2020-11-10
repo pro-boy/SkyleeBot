@@ -183,7 +183,7 @@ def new_member(update, context):
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
                 update.effective_message.reply_text(
-                    "Master is in the Group, let's get this party started!",
+                    "Ayyo! My Owner Is Here 😁, I Need To Be Obedient Now (◍•ᴗ•◍)",
                     reply_to_message_id=reply,
                 )
                 continue
@@ -191,7 +191,7 @@ def new_member(update, context):
             # Make bot greet admins
             elif new_mem.id == context.bot.id:
                 update.effective_message.reply_text(
-                    "Hey {}, I'm {}! Thank you for adding me to {}"
+                    "Hey {}, I'm *Chiyo*! Thank you for adding me to {}"
                     " I Will Try My Best To Manage Your Group Efficiently".format(
                         user.first_name, context.bot.first_name, chat_name
                     ),
@@ -200,7 +200,7 @@ def new_member(update, context):
 
                 context.bot.send_message(
                     MESSAGE_DUMP,
-                    "Meiko have been added to <pre>{}</pre> with ID: \n<pre>{}</pre>".format(
+                    "Chiyo have been added to <pre>{}</pre> with ID: \n<pre>{}</pre>".format(
                         chat.title, chat.id
                     ),
                     parse_mode=ParseMode.HTML,
@@ -868,19 +868,19 @@ __help__ = """
 {}
 
 *Admin only:*
- ✗ /welcome <on/off>: enable/disable Welcome messages.
- ✗ /welcome: Shows current welcome settings.
- ✗ /welcome noformat: Shows current welcome settings, without the formatting - useful to recycle your welcome messages!
- ✗ /goodbye -> Same usage and args as /welcome.
- ✗ /setwelcome <sometext>: Sets a custom welcome message. If used replying to media, uses that media.
- ✗ /setgoodbye <sometext>: Sets a custom goodbye message. If used replying to media, uses that media.
- ✗ /resetwelcome: Resets to the default welcome message.
- ✗ /resetgoodbye: Resets to the default goodbye message.
- ✗ /cleanwelcome <on/off>: On new member, try to delete the previous welcome message to avoid spamming the chat.
- ✗ /cleanservice <on/off>: Clean 'user is joined' service messages automatically.
- ✗ /welcomemute <off/soft/strong>: All users that join, get muted; a button gets added to the welcome message for them to unmute themselves. \
+ ◉ /welcome <on/off>: enable/disable Welcome messages.
+ ◉ /welcome: Shows current welcome settings.
+ ◉ /welcome noformat: Shows current welcome settings, without the formatting - useful to recycle your welcome messages!
+ ◉ /goodbye -> Same usage and args as /welcome.
+ ◉ /setwelcome <sometext>: Sets a custom welcome message. If used replying to media, uses that media.
+ ◉ /setgoodbye <sometext>: Sets a custom goodbye message. If used replying to media, uses that media.
+ ◉ /resetwelcome: Resets to the default welcome message.
+ ◉ /resetgoodbye: Resets to the default goodbye message.
+ ◉ /cleanwelcome <on/off>: On new member, try to delete the previous welcome message to avoid spamming the chat.
+ ◉ /cleanservice <on/off>: Clean 'user is joined' service messages automatically.
+ ◉ /welcomemute <off/soft/strong>: All users that join, get muted; a button gets added to the welcome message for them to unmute themselves. \
 This proves they aren't a bot! soft - restricts users ability to post media for 24 hours. strong - mutes on join until they prove they're not bots.
- ✗ /welcomehelp: View more formatting information for custom welcome/goodbye messages.
+ ◉ /welcomehelp: View more formatting information for custom welcome/goodbye messages.
 
 Buttons in welcome messages are made easy, everyone hates URLs visible. With button links you can make your chats look more \
 tidy and simplified.
