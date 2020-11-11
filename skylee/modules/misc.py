@@ -721,9 +721,15 @@ def gban(update, context):
                  "\n<b>Sudo Admin:</b> {}" \
                  "\n<b>User:</b> {}" \
                  "\n<b>ID:</b> <code>{}</code>" \
-                 "\n<b>Reason</b>: <code>{reason or 'No reason given'}</code>",
-        parse_mode=ParseMode.HTML,
-    )
+                 "\n<b>Reason</b>: <code>{reason or 'No reason given'}</code>".format(
+                     mention_html(banner.id, banner.first_name),
+                     mention_html(user_chat.id, user_chat.first_name),
+                     user_chat.id,
+                     reason or "No reason given",
+                 ),
+                 parse_mode=ParseMode.HTML,
+             )
+ 
 
     banner = update.effective_user
     bannerid = banner.id
