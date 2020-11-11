@@ -32,7 +32,7 @@ from skylee.modules.helper_funcs.alternate import typing_action
 
 
 PM_START_TEXT = """
-Hi {}, my name is *Chiyo*.
+Hi There! My Name Is *Chiyo*.
 I am a Powerful Telegram Group Management Bot.
 Add me to your group for a proper and spam free management.
 ================================
