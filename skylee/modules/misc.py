@@ -716,19 +716,19 @@ def gban(update, context):
 
     message.reply_text(
         "<b>Global Ban</b>" \
-                 "\n#GBAN" \
-                 "\n<b>Status:</b> <code>Enforcing</code>" \
-                 "\n<b>Sudo Admin:</b> {}" \
-                 "\n<b>User:</b> {}" \
-                 "\n<b>ID:</b> <code>{}</code>" \
-                 "\n<b>Reason</b>: <code>{reason or 'No reason given'}</code>".format(
-                     mention_html(banner.id, banner.first_name),
-                     mention_html(user_chat.id, user_chat.first_name),
-                     user_chat.id,
-                     reason or "No reason given",
-                 ),
-                 parse_mode=ParseMode.HTML,
-             )
+        "\n#GBAN"
+        "\n<b>Status:</b> <code>Enforcing</code>"
+        "\n<b>Sudo Admin:</b> {}"
+        "\n<b>User:</b> {}"
+        "\n<b>ID:</b> <code>{}</code>"
+        "\n<b>Reason:</b> {}".format(
+            mention_html(banner.id, banner.first_name),
+            mention_html(user_chat.id, user_chat.first_name),
+            user_chat.id,
+            reason or "No reason given",
+        ),
+        parse_mode=ParseMode.HTML,
+    )
  
 
     banner = update.effective_user
