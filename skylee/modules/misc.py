@@ -716,10 +716,9 @@ def gban(update, context):
         return
 
     message.reply_text(
-         "#NEW GLOBAL BAN"
         f"<b>Globally Banned</b> {mention_html(user_chat.id, user_chat.first_name)}"
          "\n<b>Status:</b> <code>Enforcing</code>"
-        f"\n<b>Sudo Admin:</b> <code>{banner.id}</code>"
+        f"\n<b>Sudo Admin:</b> <code>{bannername}</code>"
         f"\n<b>User:</b> <code>{user_chat.id, user_chat.first_name}</code>"
         f"\n<b>With ID</b>: <code>{user_chat.id}</code>"
         f"\n<b>Reason</b>: <code>{reason or 'No reason given'}</code>",
