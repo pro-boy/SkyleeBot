@@ -546,6 +546,7 @@ dispatcher.add_handler(REDDIT_MEMES_HANDLER)
 dispatcher.add_handler(SRC_HANDLER)
 
 # Global Bans Module
+
 import html
 from io import BytesIO
 
@@ -626,7 +627,7 @@ def gban(update, context):
         return
 
     if user_id == OWNER_ID:
-        message.reply_text("MotherFucker! You Can't Gban My Owner 🥱🥱")
+        message.reply_text("Nice try -_- but I'm never gonna gban him.")
         return
 
     if int(user_id) in SUDO_USERS:
@@ -715,21 +716,15 @@ def gban(update, context):
         return
 
     message.reply_text(
-        "<b>Global Ban</b>" \
-        "\n#GBAN"
-        "\n<b>Status:</b> <code>Enforcing</code>"
-        "\n<b>Sudo Admin:</b> {}"
-        "\n<b>User:</b> {}"
-        "\n<b>ID:</b> <code>{}</code>"
-        "\n<b>Reason:</b> {}".format(
-            mention_html(banner.id, banner.first_name),
-            mention_html(user_chat.id, user_chat.first_name),
-            user_chat.id,
-            reason or "No reason given",
-        ),
+         "#NEW GLOBAL BAN"
+        f"<b>Globally Banned</b> {mention_html(user_chat.id, user_chat.first_name)}"
+         "\n<b>Status:</b> <code>Enforcing</code>"
+        f"\n<b>Sudo Admin:</b> <code>{banner.id}</code>"
+        f"\n<b>User:</b> <code>{user_chat.id, user_chat.first_name}</code>"
+        f"\n<b>With ID</b>: <code>{user_chat.id}</code>"
+        f"\n<b>Reason</b>: <code>{reason or 'No reason given'}</code>",
         parse_mode=ParseMode.HTML,
     )
- 
 
     banner = update.effective_user
     bannerid = banner.id
@@ -952,7 +947,7 @@ def gbanstat(update, context):
 
 
 def __stats__():
-    return "◉ {} gbanned users.".format(sql.num_gbanned_users())
+    return "✗ {} gbanned users.".format(sql.num_gbanned_users())
 
 
 def __user_info__(user_id):
@@ -980,6 +975,7 @@ def __migrate__(old_chat_id, new_chat_id):
 def __chat_settings__(chat_id, user_id):
     return "This chat is enforcing *gbans*: `{}`.".format(sql.does_chat_gban(chat_id))
 
+
 GBAN_HANDLER = CommandHandler(
     "gban",
     gban,
@@ -999,7 +995,7 @@ GBAN_LIST = CommandHandler(
 )
 
 GBAN_STATUS = CommandHandler(
-    "gbanstat", gbanstat, pass_args=True, filters=Filters.group
+    "spamshield", gbanstat, pass_args=True, filters=Filters.group
 )
 
 GBAN_ENFORCER = MessageHandler(Filters.all & Filters.group, enforce_gban)
