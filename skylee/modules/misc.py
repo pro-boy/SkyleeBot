@@ -716,10 +716,7 @@ def gban(update, context):
         return
 
     message.reply_text(
-        f"<b>Globally Banned</b> {mention_html(user_chat.id, user_chat.first_name)}"
-         "\n<b>Status:</b> <code>Enforcing</code>"
-        f"\n<b>Sudo Admin:</b> <code>{bannername}</code>"
-        f"\n<b>User:</b> <code>{user_chat.id, user_chat.first_name}</code>"
+        f"<b>Global Banned</b> {mention_html(user_chat.id, user_chat.first_name)}"
         f"\n<b>With ID</b>: <code>{user_chat.id}</code>"
         f"\n<b>Reason</b>: <code>{reason or 'No reason given'}</code>",
         parse_mode=ParseMode.HTML,
@@ -946,7 +943,7 @@ def gbanstat(update, context):
 
 
 def __stats__():
-    return "✗ {} gbanned users.".format(sql.num_gbanned_users())
+    return "◉ {} gbanned users.".format(sql.num_gbanned_users())
 
 
 def __user_info__(user_id):
