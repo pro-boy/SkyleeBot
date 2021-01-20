@@ -35,10 +35,10 @@ PM_START_TEXT = """
 Hi There! My Name Is *Chiyo*.
 I am a Powerful Telegram Group Management Bot.
 Add me to your group for a proper and spam free management.
-================================
+============================
 >> For Available Commands Hit /help.
 >> For Chiyo Updates Join [Here](t.me/ChiyoUpdates).
-================================\n
+============================\n
 """
 
 HELP_STRINGS = """
